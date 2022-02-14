@@ -11,23 +11,13 @@ galaxy_info:
   platforms:
   - name: EL
     versions:
-    - 7
     - 8
-  - name: Debian
-    versions:
-    - all
   - name: Fedora
     versions:
     - all
-  - name: opensuse
+  - name: Rocky
     versions:
-    - all
-  - name: SLES
-    versions:
-    - all
-  - name: Ubuntu
-    versions:
-    - all
+    - 8
 
   galaxy_tags: []
 

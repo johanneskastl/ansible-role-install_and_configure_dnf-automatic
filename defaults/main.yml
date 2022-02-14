@@ -1,0 +1,4 @@
+---
+# install_and_configure_dnf-automatic/defaults/main.yml
+
+enable_dnf_update_installation: 'yes'

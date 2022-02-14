@@ -12,7 +12,7 @@
 - name: 'Create configuration file /etc/dnf/automatic.conf'
   template:
     src: 'etc_dnf_automatic.conf.j2'
-    dest: ' /etc/dnf/automatic.conf'
+    dest: '/etc/dnf/automatic.conf'
     owner: 'root'
     group: 'root'
     mode: '0644'

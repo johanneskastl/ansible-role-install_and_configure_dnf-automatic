@@ -11,7 +11,7 @@ None.
 Role Variables
 --------------
 
-None.
+- `enable_dnf_update_installation`: By default, this is set to `yes` and enables automatic **installation** of updates, not only downloading or notifying the user.
 
 Dependencies
 ------------

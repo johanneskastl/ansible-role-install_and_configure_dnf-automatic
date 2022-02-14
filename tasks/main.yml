@@ -1,0 +1,30 @@
+---
+# install_and_configure_dnf-automatic/tasks/main.yml
+
+- name: 'Install package dnf-automatic'
+  package:
+    name: 'dnf-automatic'
+    state: 'present'
+  when:
+    - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
+    - 'ansible_distribution_major_version == "8"'
+
+- name: 'Create configuration file /etc/dnf/automatic.conf'
+  template:
+    src: 'etc_dnf_automatic.conf.j2'
+    dest: ' /etc/dnf/automatic.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  when:
+    - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
+    - 'ansible_distribution_major_version == "8"'
+
+- name: 'Start and enable the systemd timer for dnf-automatic'
+  service:
+    name: 'dnf-automatic.timer'
+    state: 'started'
+    enabled: 'true'
+  when:
+    - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
+    - 'ansible_distribution_major_version == "8"'

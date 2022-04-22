@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'install_and_configure_dnf-automatic'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Install and configure dnf-automatic'
   company: 'B1 Systems GmbH'

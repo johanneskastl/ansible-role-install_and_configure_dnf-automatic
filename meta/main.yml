@@ -10,15 +10,15 @@ galaxy_info:
   min_ansible_version: 2.4
 
   platforms:
-  - name: EL
-    versions:
-    - 8
-  - name: Fedora
-    versions:
-    - all
-  - name: Rocky
-    versions:
-    - 8
+    - name: EL
+      versions:
+        - 8
+    - name: Fedora
+      versions:
+        - all
+    - name: Rocky
+      versions:
+        - 8
 
   galaxy_tags: []
 

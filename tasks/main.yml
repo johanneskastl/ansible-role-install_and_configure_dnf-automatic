@@ -7,7 +7,7 @@
     state: 'present'
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
-    - 'ansible_distribution_major_version | int == 8'
+    - 'ansible_distribution_major_version | int >= 8'
 
 - name: 'Create configuration file /etc/dnf/automatic.conf'
   ansible.builtin.template:
@@ -18,7 +18,7 @@
     mode: '0644'
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
-    - 'ansible_distribution_major_version | int == 8'
+    - 'ansible_distribution_major_version | int >= 8'
 
 - name: 'Start and enable the systemd timer for dnf-automatic'
   ansible.builtin.service:
@@ -27,4 +27,4 @@
     enabled: 'true'
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
-    - 'ansible_distribution_major_version | int == 8'
+    - 'ansible_distribution_major_version | int >= 8'

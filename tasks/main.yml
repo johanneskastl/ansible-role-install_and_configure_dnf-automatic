@@ -2,7 +2,7 @@
 # install_and_configure_dnf-automatic/tasks/main.yml
 
 - name: 'Install package dnf-automatic'
-  package:
+  ansible.builtin.package:
     name: 'dnf-automatic'
     state: 'present'
   when:
@@ -10,7 +10,7 @@
     - 'ansible_distribution_major_version == "8"'
 
 - name: 'Create configuration file /etc/dnf/automatic.conf'
-  template:
+  ansible.builtin.template:
     src: 'etc_dnf_automatic.conf.j2'
     dest: '/etc/dnf/automatic.conf'
     owner: 'root'
@@ -21,7 +21,7 @@
     - 'ansible_distribution_major_version == "8"'
 
 - name: 'Start and enable the systemd timer for dnf-automatic'
-  service:
+  ansible.builtin.service:
     name: 'dnf-automatic.timer'
     state: 'started'
     enabled: 'true'

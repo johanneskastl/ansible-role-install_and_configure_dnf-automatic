@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - { role: 'johanneskastl.install_and_configure_dnf-automatic' }
+        - role: 'johanneskastl.install_and_configure_dnf-automatic'
 
 License
 -------

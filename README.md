@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-install_and_configure_dnf-automatic/workflows/Ansible%20Lint/badge.svg)
+
 install_and_configure_dnf-automatic
 =========
 

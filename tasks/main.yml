@@ -8,6 +8,7 @@
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
     - 'ansible_distribution_major_version | int >= 8'
+    - 'not ansible_pkg_mgr == "atomic_container"'
 
 - name: 'Create configuration file /etc/dnf/automatic.conf'
   ansible.builtin.template:
@@ -19,6 +20,7 @@
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
     - 'ansible_distribution_major_version | int >= 8'
+    - 'not ansible_pkg_mgr == "atomic_container"'
 
 - name: 'Start and enable the systemd timer for dnf-automatic'
   ansible.builtin.service:
@@ -28,3 +30,4 @@
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
     - 'ansible_distribution_major_version | int >= 8'
+    - 'not ansible_pkg_mgr == "atomic_container"'
